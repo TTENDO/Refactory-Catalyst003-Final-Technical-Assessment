@@ -1,0 +1,41 @@
+/*Registration heading*/
+body {
+  padding-top: 20px;
+  color: #542a52;
+}
+
+.heading {
+  background-color: #542a52;
+  color: white;
+  padding-left: 20px;
+}
+
+.star {
+  color: #c00000;
+}
+
+.nearStar {
+  color: rgb(180, 179, 179);
+}
+
+.submitBtn {
+  background-color: #542a52;
+  color: white;
+  font-weight: bold;
+  border:1px solid #542a52;
+  width:210px;
+}
+
+.cancelBtn{
+
+    color:#542a52;
+    font-weight: bold;
+     border:1px solid #542a52;
+     background-color:#ffffff;
+     width:210px;
+
+}
+
+label{
+    font-weight:bold;
+}
