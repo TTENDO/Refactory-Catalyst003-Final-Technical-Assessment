@@ -13,7 +13,7 @@
 <body class="container">
 
             
-                            <form action="#">
+                            <form action="">
                                 <div class="row">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -27,14 +27,15 @@
 
                                                     <label for="surname">Surname<span class="star">*</span></label> <br>
                                                     <input type="text" class="form-control" id="surname" placeholder="Enter your Sur Name here" name="surname" >
+                                                    <br><p id="sur"></p>
 
                                                 </div>
 
                                                 <div class="col-lg-6">
                                                     
-                                                    <label for="surname">Given name<span class="star">*</span></label> <br>
+                                                    <label for="givenName">Given name<span class="star">*</span></label> <br>
                                                     <input type="text" class="form-control" id="givenName" placeholder="Enter your Given Name here" name="givenName" >
-
+                                                    <br><p id="giv"></p>
                                                 </div>
                                             </div>
                                                                                    
@@ -62,7 +63,7 @@
 
                                                     <label for="dob">Date of Birth<span class="star">*</span></label> <br>
                                                     <input type="date" class="form-control" id="dob" placeholder="01/01/1970" name="dob" >
-
+                                                    <br><p id="dateOf"></p>
                                                 </div>
 
                                                 <div class="col-lg-6">
@@ -317,6 +318,7 @@
                                             <option value="Zambia">Zambia</option>
                                             <option value="Zimbabwe">Zimbabwe</option>
                                          </select>
+                                         <br><p id="cou"></p>
 
                                                 </div>
                                             </div>
@@ -330,14 +332,14 @@
 
                                                     <label for="placeOfResidence">Place of Residence<span class="star">*</span></label> <br>
                                                     <input type="text" class="form-control" id="placeOfResidence" placeholder="Enter your Current place of residence" name="placeOfResidence" >
-
+                                                    <br><p id="pla"></p>
                                                 </div>
 
                                                 <div class="col-lg-6">
                                                     
                                                     <label for="phoneNo">Phone Number<span class="star">*</span></label> <br>
-                                                    <input type="text" class="form-control" id="givenName" placeholder="Eg 07xxxxxxxx or +2567xxxxxxxx" name="phoneNo" >
-
+                                                    <input type="text" class="form-control" id="phoneNo" placeholder="Eg 07xxxxxxxx or +2567xxxxxxxx" name="phoneNo" >
+                                                    <br><p id="pho"></p>
                                                 </div>
                                             </div>
                                                                                    
@@ -349,7 +351,7 @@
 
                                                     <label for="email">Email Address<span class="star">*</span></label> <br>
                                                     <input type="text" class="form-control" id="email" placeholder="Eg applicant@gmail.com" name="email" >
-
+                                                    <br><p id="ema"></p>
                                                 </div>
 
                                               
@@ -382,9 +384,9 @@
 
                                                 <div class="col-lg-6">
                                                      <!--Submit button-->
-                                                    <button type="submit" class="submitBtn"  onclick="return +formValidation();" >Submit</button>
+                                                    <button type="submit" class="submitBtn"  onclick="check();" >Submit</button>
                                                     <!-- cancel button -->
-                                                     <button type="reset" class="cancelBtn"  onclick="return +formValidation();" >Cancel</button>
+                                                     <button type="reset" class="cancelBtn"  onclick="" >Cancel</button>
 
                                                    
 
@@ -404,24 +406,73 @@
                                     
                             </form>
 
-                   
-                    
-                <div class="footer">
-                    <center>
-                    <!--calling the check function on clicking the login button-->
-                    <button type="submit" class="btn btn-dark" >Login</button>
-                    <!--Resetting the form on clicking the reset button-->
-                    <button type="reset" id="recet" class="btn btn-primary" onclick="formReset()">Reset</button>
-                    </center>
+                            <script>
+                                   
+                                                function check() {
+                                                    var sname = document.getElementById("surname");
+                                                    var gname = document.getElementById("givenName");
+                                                    var dateOfB = document.getElementById("dob");
+                                                    var counTry=document.getElementById("country");
+                                                    var place = document.getElementById("placeOfResidence")
+                                                    var phone = document.getElementById("phoneNo")
+                                                    var mail = document.getElementById("email");
 
-                </div>
-      
+                                                     if (sname.value == "") {
+                                                        var c = document.getElementById("sur");
+                                                        c.textContent = "Surname is required";
+                                                     }
 
+                                                     if (gname.value == "") {
+                                                        var c = document.getElementById("giv");
+                                                        c.textContent = "Given name is required";
+                                                     }
+
+                                                     if (dateOfB.value == "") {
+                                                        var c = document.getElementById("dateOf");
+                                                        c.textContent = "Date of birth is required";
+                                                     }
+                                                     if (counTry.value == "") {
+                                                        var c = document.getElementById("cou");
+                                                         c.textContent = "Country Field is required";
+                                                     }
+
+                                                        if (place.value == "") {
+                                                        var c = document.getElementById("pla");
+                                                         c.textContent = "This field is required";
+                                                     }
+
+                                                     if (place.value == "") {
+                                                        var c = document.getElementById("pho");
+                                                         c.textContent = "This field is required";
+                                                     }
+                                                        if (mail.value == "") {
+                                                        var c = document.getElementById("ema");
+                                                         c.textContent = "This field is required";
+                                                     }
+
+
+
+
+
+                                                     
+                                                }
+
+                                                    
+
+                                                    // if (a.value == "" || pword.value == "") {
+                                                    //     alert("No field should be left blank");
+                                                    //     uname.style.border = "2px solid red";
+                                                    //     return false;
+                                                    // } else {
+                                                    //     true;
+                                                   
+                            </script>
 
     
     <script src="bootstrap/js/jquery-3.4.1.min.js"></script>
     <script src="bootstrap/js/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="bootstrap/js/login.js"></script>
+    <script src="validate.js"></script>
+  
 </body>
 </html>
